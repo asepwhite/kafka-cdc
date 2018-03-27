@@ -21,7 +21,7 @@ public class ConsumerTest {
         props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 
         KafkaConsumer<String, String> kafkaConsumer = new KafkaConsumer<String, String>(props);
-        kafkaConsumer.subscribe(Arrays.asList("dbhistory.inventory.customers"));
+        kafkaConsumer.subscribe(Arrays.asList("dbserver1.inventory.customers"));
         while (true) {
             ConsumerRecords<String, String> records = kafkaConsumer.poll(100);
             for (ConsumerRecord<String, String> record : records) {
