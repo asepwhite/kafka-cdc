@@ -22,7 +22,7 @@ public class ProducerTest {
        Producer<String, String> prod = new KafkaProducer<String, String>(props);
 
         for (int i = 70; i < 76; i++) {
-            String message = "Ini adalah message ke "+i;
+            String message = "test"+i;
             prod.send(new ProducerRecord<String, String>("test-topic", message));
         }
         prod.close();
